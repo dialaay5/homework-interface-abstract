@@ -72,13 +72,13 @@ public class Main {
              "A class can implement more than one interface. It is called multiple inheritances.\n" +
              "You want to specify the behavior of a particular data type but are not concerned about who implements its behavior.\n");
 
-     GuitarPlayer guitarist = new GuitarPlayer("dany", "Salsa music");
+     IPlayer guitarist = new GuitarPlayer("dany", "Salsa music");
      System.out.println(guitarist);
 
-     PianoPlayer pianist = new PianoPlayer("tal", "Classical music");
+     IPlayer pianist = new PianoPlayer("tal", "Classical music");
      System.out.println(pianist);
 
-     Player[] players = {guitarist,pianist};
+     IPlayer[] players = {guitarist,pianist};
 
      startMusicShow(players[0]);
      System.out.println(" ");
@@ -86,7 +86,7 @@ public class Main {
 
     }
 
- static void startMusicShow(Player players){
+ static void startMusicShow(IPlayer players){
   players.getPlay();
 
      if(players.getClass() == GuitarPlayer.class){
